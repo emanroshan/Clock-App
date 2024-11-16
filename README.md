@@ -61,7 +61,9 @@ A countdown timer to help users time specific tasks.
 ### 1. Clone or Download the Repository
 You can clone the project using the following command:
 
-
+```bash
+git clone https://github.com/emanroshan/Clock-App.git
+<!-- After cloning the project, you can follow the steps below to set up the app on Android Studio. -->
 ### 2. Open the Project in Android Studio
 Open Android Studio and select Open an existing project.
 Navigate to the directory where you cloned the project and open it.
@@ -70,22 +72,22 @@ Ensure that your device or emulator is set up.
 Click on Run to build and launch the app on your Android device.
 
 ---
-##Usage
-###Digital Clock
+## Usage
+### Digital Clock
   Upon launching the app, the Digital Clock will display the current time in a clear format. You can toggle between 12-hour and 24-hour formats in the settings.
-###Setting Alarms
+### Setting Alarms
 Navigate to the Alarm section to set, edit, or delete alarms. You can customize the alarm tone, time, and snooze options.
-###Stopwatch
+### Stopwatch
 Access the Stopwatch feature to start, pause, and reset the stopwatch. The app also tracks lap times for more accurate time tracking.
-##Timer
+### Timer
 Use the Timer section to set a countdown for any task. When the timer runs out, you will receive an alert. You can pause or resume the timer if needed.
 
 ---
-##Credits
+## Credits
 -Android Developer Documentation for guidance on building Android apps.
 -Material Design Guidelines for a modern, user-friendly interface.
 
-##License
+## License
 This project is open-source and available under the MIT License.
 
 ### Explanation of Changes:
