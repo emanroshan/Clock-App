@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Clock</string>
+    <string-array name="sound_options">
+        <item>Beep</item>
+        <item>Bell</item>
+        <item>Chime</item>
+        <item>Alarm</item>
+        <item>Tone</item>
+    </string-array>
+</resources>
