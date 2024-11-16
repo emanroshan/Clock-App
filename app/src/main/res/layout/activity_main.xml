@@ -7,19 +7,22 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/tabLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-    </com.google.android.material.appbar.AppBarLayout>
-
+    <!-- ViewPager2 for Fragment Navigation -->
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+    <!-- TabLayout at the Bottom with Icons -->
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:tabMode="fixed"
+        app:tabGravity="fill"
+        app:tabIconTint="@color/selector_tab_icon_color"
+        app:tabIndicatorHeight="3dp"
+    app:tabIndicatorColor="@color/tab_indicator_color" /> 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

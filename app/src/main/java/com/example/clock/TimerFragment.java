@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 
 public class TimerFragment extends Fragment {
@@ -102,8 +103,7 @@ public class TimerFragment extends Fragment {
             @Override
             public void onFinish() {
                 playAlarmSound();
-                timerTextView.setText("00:00:00");
-                resetTimerUI();
+                showAlertDialog();
             }
         }.start();
     }
@@ -140,20 +140,34 @@ public class TimerFragment extends Fragment {
         stopTimerButton.setVisibility(View.GONE);
         isPaused = false;
         timerTextView.setText("00:00:00");
+        if (mediaPlayer != null && mediaPlayer.isPlaying()) {
+            mediaPlayer.stop();
+            mediaPlayer.release();
+            mediaPlayer = null;
+        }
     }
 
     private void playAlarmSound() {
-        mediaPlayer = MediaPlayer.create(getContext(), selectedSound); // Play selected sound
+        mediaPlayer = MediaPlayer.create(getContext(), selectedSound);
+        mediaPlayer.setLooping(true); // Set sound to loop
         mediaPlayer.start();
+    }
 
-        // Stop the sound after 4 seconds
-        new Handler().postDelayed(() -> {
-            if (mediaPlayer.isPlaying()) {
-                mediaPlayer.stop();
-                mediaPlayer.release();
-                mediaPlayer = null;
-            }
-        }, 4000); // 4000ms = 4 seconds
+    private void showAlertDialog() {
+        new AlertDialog.Builder(requireContext())
+                .setTitle("Timer Finished")
+                .setMessage("The timer has finished!")
+                .setCancelable(false)
+                .setPositiveButton("OK", (dialog, which) -> {
+                    // Stop the sound and reset the timer
+                    if (mediaPlayer != null && mediaPlayer.isPlaying()) {
+                        mediaPlayer.stop();
+                        mediaPlayer.release();
+                        mediaPlayer = null;
+                    }
+                    resetTimerUI();
+                })
+                .show();
     }
 
     @Override

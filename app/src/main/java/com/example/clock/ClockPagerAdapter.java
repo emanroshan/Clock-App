@@ -16,13 +16,16 @@ public class ClockPagerAdapter extends FragmentStateAdapter {
     public Fragment createFragment(int position) {
         switch (position) {
             case 0:
-                return new DigitalClockFragment(); // Your Digital Clock Fragment
+                return new DigitalClockFragment();
+
             case 1:
-                return new TimerFragment(); // Your Timer Fragment
-            case 2:
-                return new StopwatchFragment();
-            case 3:
                 return new AlarmClockFragment();
+
+            case 2:
+                return new TimerFragment();
+            case 3:
+                return new StopwatchFragment();
+
             default:
                 return new DigitalClockFragment(); // Default Fragment
         }

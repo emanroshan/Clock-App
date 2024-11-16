@@ -74,6 +74,8 @@ public class StopwatchFragment extends Fragment {
             resetStopwatchButton.setVisibility(View.VISIBLE);
             lapStopwatchButton.setVisibility(View.VISIBLE);
 
+            lapStopwatchButton.setEnabled(true); // Enable lap button when stopwatch starts
+
             // Start the timer
             handler.post(updateTimerRunnable = new Runnable() {
                 long startTime = System.currentTimeMillis() - elapsedTimeInMillis;
@@ -88,6 +90,7 @@ public class StopwatchFragment extends Fragment {
         }
     }
 
+
     private void pauseStopwatch() {
         if (isRunning) {
             isRunning = false;
@@ -95,8 +98,11 @@ public class StopwatchFragment extends Fragment {
             startStopwatchButton.setText("Resume");
             startStopwatchButton.setVisibility(View.VISIBLE);
             pauseStopwatchButton.setVisibility(View.GONE);
+
+            lapStopwatchButton.setEnabled(false); // Disable lap button when paused
         }
     }
+
 
     private void resetStopwatch() {
         isRunning = false;
@@ -111,9 +117,16 @@ public class StopwatchFragment extends Fragment {
         resetStopwatchButton.setVisibility(View.GONE);
         lapStopwatchButton.setVisibility(View.GONE);
         lapRecyclerView.setVisibility(View.GONE); // Hide RecyclerView when reset
+
+        lapStopwatchButton.setEnabled(false); // Disable lap button on reset
     }
 
+
     private void updateStopwatchTextView() {
+        if (elapsedTimeInMillis == 0) {
+            stopwatchTextView.setText("00:00:00"); // Display cleaner look when idle
+            return;
+        }
         int hours = (int) (elapsedTimeInMillis / 3600000);
         int minutes = (int) ((elapsedTimeInMillis % 3600000) / 60000);
         int seconds = (int) ((elapsedTimeInMillis % 60000) / 1000);
@@ -129,21 +142,26 @@ public class StopwatchFragment extends Fragment {
             int hours = (int) (elapsedTimeInMillis / 3600000);
             int minutes = (int) ((elapsedTimeInMillis % 3600000) / 60000);
             int seconds = (int) ((elapsedTimeInMillis % 60000) / 1000);
-            int milliseconds = (int) ((elapsedTimeInMillis % 1000) / 10);
 
-            String lapTime = String.format("%02d:%02d:%02d:%02d", hours, minutes, seconds, milliseconds);
+            // Use cleaner formatting for laps
+            String lapTime = String.format("%02d:%02d:%02d", hours, minutes, seconds);
 
-            // Log lap time for debugging
-            Log.d("Stopwatch", "Lap added: " + lapTime);
-            lapList.add(lapTime);
+            // Add lap number and time
+            String lapEntry = "Lap " + (lapList.size() + 1) + ": " + lapTime;
+
+            lapList.add(lapEntry);
 
             // Notify the adapter that the data has changed
             lapAdapter.notifyDataSetChanged();
 
-            // Make sure RecyclerView is visible
+            // Scroll to the latest lap
+            lapRecyclerView.scrollToPosition(lapList.size() - 1);
+
+            // Make RecyclerView visible
             lapRecyclerView.setVisibility(View.VISIBLE);
         }
     }
+
 
 
 }

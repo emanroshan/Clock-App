@@ -27,17 +27,26 @@ public class MainActivity extends AppCompatActivity {
         new TabLayoutMediator(tabLayout, viewPager, (tab, position) -> {
             switch (position) {
                 case 0:
-                    tab.setText("Digital Clock");
+                    tab.setIcon(R.drawable.clock);
+                    tab.setText("Clock");
                     break;
+
                 case 1:
-                    tab.setText("Timer");
-                    break;
-                case 2:
-                    tab.setText("Stopwatch");
-                    break;
-                case 3:
+                    tab.setIcon(R.drawable.alarm);
                     tab.setText("Alarm");
                     break;
+
+
+                case 2:
+                    tab.setIcon(R.drawable.timer);
+                    tab.setText("Timer");
+                    break;
+
+                case 3:
+                    tab.setIcon(R.drawable.stopwatch);
+                    tab.setText("Stopwatch");
+                    break;
+
             }
         }).attach();
     }
