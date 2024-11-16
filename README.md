@@ -60,10 +60,8 @@ A countdown timer to help users time specific tasks.
 
 ### 1. Clone or Download the Repository
 You can clone the project using the following command:
-
-```bash
 git clone https://github.com/emanroshan/Clock-App.git
-<!-- After cloning the project, you can follow the steps below to set up the app on Android Studio. -->
+--
 ### 2. Open the Project in Android Studio
 Open Android Studio and select Open an existing project.
 Navigate to the directory where you cloned the project and open it.
