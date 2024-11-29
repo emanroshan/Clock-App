@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#010101</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="PrimaryDark">#A9A9A9</color>
+    <color name="Gray">#1b1b1b</color>
+    <color name="Accent">#9c9282</color>
+    <color name="LightGray">#656660</color>
+    <color name="SemiLightGray">#6a6a6a</color>
+    <color name="LightPurple">#ca96eb</color>
+    <color name="DarkGray">#0b0b0b</color>
+    <color name="KindaOrange">#fa5a44</color>
+    <color name="KindaLightOrange">#fea56b</color>
+</resources>
+

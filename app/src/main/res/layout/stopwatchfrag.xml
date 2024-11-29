@@ -1,0 +1,95 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@color/black">
+
+    <!-- Timer Display - Fixed in the center -->
+    <TextView
+        android:id="@+id/stopwatchTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="00:00.00"
+        android:textColor="@color/LightPurple"
+        android:textSize="46sp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp" />
+
+    <!-- Scrollable Lap List -->
+
+    <!-- Buttons for Stopwatch Control -->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/lapRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_above="@id/buttonLayout"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="70dp"
+        android:background="@color/DarkGray"
+        android:visibility="visible" />
+
+    <LinearLayout
+        android:id="@+id/buttonLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="81dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:weightSum="3">
+
+        <Button
+            android:id="@+id/lapStopwatchButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/LightPurple"
+            android:text="Lap"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/startStopwatchButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/LightPurple"
+            android:text="Start"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/pauseStopwatchButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/Gray"
+            android:text="Pause"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/resumeStopwatchButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/LightPurple"
+            android:text="Resume"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/resetStopwatchButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/DarkGray"
+            android:text="Reset"
+            android:visibility="gone" />
+    </LinearLayout>
+</RelativeLayout>

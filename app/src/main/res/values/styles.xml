@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Style for the TabLayout text appearance -->
+    <style name="TabTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">14sp</item> <!-- Change to desired text size -->
+        <item name="android:textColor">@color/LightPurple</item> <!-- You can also customize text color here -->
+    </style>
+
+    <!-- Base application theme -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Apply Breeze Sans font to all text in the app -->
+        <item name="android:fontFamily">@font/breezesans</item>
+    </style>
+
+    <style name="CustomDialogStyle" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:windowMinWidthMajor">80%</item>
+        <item name="android:windowMinWidthMinor">80%</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+    <style name="CustomTimePickerTheme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent">#FFFFFF</item> <!-- Change this to the desired text color -->
+        <item name="android:textColorPrimary">#FFFFFF</item> <!-- For primary text color -->
+        <item name="android:textColorSecondary">#000000</item> <!-- For secondary text color -->
+
+        <item name="android:textAppearanceLarge">@style/TimePickerTextLarge</item>
+    </style>
+
+    <!-- Large text style -->
+    <style name="TimePickerTextLarge">
+        <item name="android:textSize">34sp</item>
+        <item name="android:textColor">#FF5722</item>
+    </style>
+
+    <style name="SpinnerItemStyle">
+        <item name="android:textColor">@android:color/white</item> <!-- Change to any color you want -->
+        <item name="android:textSize">18sp</item> <!-- Change text size if needed -->
+    </style>
+
+    <style name="CustomNumberPickerStyle">
+        <item name="android:textColor">#FFFFFF</item><!-- Divider color (optional) -->
+    </style>
+
+
+
+</resources>
+

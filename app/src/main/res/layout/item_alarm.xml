@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/item_alarm_background"
+    android:padding="16dp"
+    android:layout_margin="8dp">
+
+    <!-- Horizontal Layout for Time and Actions -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingBottom="8dp">
+
+        <TextView
+            android:id="@+id/timeTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="12:00"
+            android:textSize="34dp"
+            android:paddingTop="22dp"
+            android:paddingBottom="10dp"
+            android:textColor="@android:color/white"
+            android:paddingEnd="16dp" />
+
+        <Switch
+            android:id="@+id/alarmSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:layout_marginEnd="8dp"
+            android:track="@drawable/custom_switch_track"
+            android:thumbTint="@color/white" />
+
+
+
+        <ImageView
+            android:id="@+id/deleteButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/delete"
+            android:contentDescription="Delete Alarm"
+            android:tint="@color/white" />
+    </LinearLayout>
+
+</LinearLayout>
