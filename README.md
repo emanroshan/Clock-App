@@ -26,3 +26,12 @@ This is a Clock App clone built using Android Studio. It features a digital cloc
 1. Clone the repository:
    ```bash
    git clone https://github.com/emanroshan/Clock-App.git
+2. Open the project in Android Studio.
+
+3. Build and run the app on an Android emulator or a physical device.
+
+
+
+## Requirements
+1. Android Studio
+2. Android SDK
